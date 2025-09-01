@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Website menu #02 - Demo</title>
+  <style>
+    :root{
+      --bg:#f7f5f6;
+      --nav-bg:#222021;     
+      --accent:#71d10a;     
+      --muted:#9b94a0;
+      --container:1100px;
+      --radius:6px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#fffaf8 0%,var(--bg) 60%);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+  
+    .page-frame{
+      max-width: var(--container);
+      margin:32px auto;
+      background:#fff;
+      box-shadow: 0 10px 30px rgba(20,20,20,0.08);
+      border-radius: 8px;
+      overflow:hidden;
+      border-top: 12px solid #f1f1f1; 
+    }
+
+    .topbar {
+      padding: 36px 36px 12px;
+      text-align:center;
+      border-bottom:1px solid #efefef;
+      position:relative;
+    }
+    .topbar h1{
+      margin:0;
+      font-weight:600;
+      color:#6f6b70;
+      letter-spacing:1px;
+      font-size:20px;
+    }
+
+    .header-row{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      justify-content:space-between;
+      padding:18px 36px;
+    }
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo .brand{
+      font-weight:700;
+      letter-spacing:1px;
+    }
+    .logo .small{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .socials{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .socials .dot{
+      width:12px;height:12px;border-radius:50%;
+      background:#cfc9cf;display:inline-block;
+    }
+
+  
+    .nav-wrap{
+      background:var(--nav-bg);
+      padding:12px 28px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .nav-inner{
+      width:100%;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      max-width: var(--container);
+      margin:0 auto;
+    }
+
+    .menu{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      list-style:none;
+      margin:0;padding:0;
+    }
+    .menu li{
+      color:#eee;
+      padding:10px 16px;
+      font-size:14px;
+      cursor:pointer;
+      border-radius:3px;
+      opacity:0.95;
+    }
+    .menu li:hover{ background: rgba(255,255,255,0.03); }
+
+    .menu .home{
+      background:var(--accent);
+      color:#222;
+      font-weight:700;
+    }
+
+    
+    .nav-actions{
+      margin-left:auto;
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .search {
+      display:flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border-radius:6px;
+      padding:6px 8px;
+      min-width:220px;
+      box-shadow:0 2px 0 rgba(0,0,0,0.04);
+    }
+    .search input{
+      border:0;
+      outline:none;
+      font-size:14px;
+      padding:6px;
+      width:100%;
+    }
+    .search .icon{
+      width:18px;height:18px;opacity:0.6;
+    }
+
+  
+    .content-block{
+      min-height:340px;
+      padding:46px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,245,240,0.7));
+    }
+
+   
+    @media (max-width:880px){
+      .nav-inner{flex-direction:column;align-items:flex-start;gap:12px;}
+      .nav-actions{width:100%;justify-content:space-between;}
+      .search{min-width:160px;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-frame">
+ 
+    <div class="topbar">
+      <h1>Website menu #02</h1>
+    </div>
+
+  
+    <div class="header-row" style="border-bottom:1px solid #efefef;">
+      <div class="logo">
+        <!-- simple logo block -->
+        <div style="width:56px;height:20px;border-radius:3px;background:#f4f4f6;display:flex;align-items:center;justify-content:center;font-weight:700;color:#444">PM</div>
+        <div>
+          <div class="brand">PAPERMAG</div>
+          <div class="small">MAGAZINE</div>
+        </div>
+      </div>
+      <div class="socials" aria-hidden="true">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <!-- navigation bar -->
+    <nav class="nav-wrap" aria-label="Primary navigation">
+      <div class="nav-inner">
+        <ul class="menu" role="menubar" aria-label="Main menu">
+          <li class="home" role="menuitem">Home</li>
+          <li role="menuitem">Page</li>
+          <li role="menuitem">Catalog</li>
+          <li role="menuitem">Blog</li>
+          <li role="menuitem">Contact</li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- search box -->
+          <div class="search" role="search">
+            <input type="text" placeholder="Search..." aria-label="Search site" />
+            <!-- simple magnifier svg -->
+            <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M21 21l-4.35-4.35" stroke="#333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="11" cy="11" r="6" stroke="#333" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- large empty content area like screenshot -->
+    <div class="content-block">
+      <!-- content intentionally minimal to match the screenshot -->
+    </div>
+  </div>
+
+</body>
+</html>
